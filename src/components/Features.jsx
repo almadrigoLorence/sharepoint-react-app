@@ -1,43 +1,43 @@
 import React from 'react';
 import AnimatedContainer from './AnimatedContainer';
-import { Zap, ShieldCheck, Palette, Monitor, Cpu, Activity } from 'lucide-react';
+import { BookOpen, ShieldAlert, BadgeCheck, MessageSquare, Compass, Activity } from 'lucide-react';
 
 const FEATURES = [
   {
     id: 1,
-    icon: <Zap size={22} className="feat-icon-purple" />,
-    title: "Instant Performance",
-    description: "Built on Vite + React. Standard page loads take less than 1 second, avoiding the heavy bootstrap overhead of typical legacy intranet pages."
+    icon: <BookOpen size={22} className="feat-icon-purple" />,
+    title: "15-Minute Labs",
+    description: "Self-paced, bite-sized learning models. Designed to fit easily into your daily workflow without disrupting your work calendar."
   },
   {
     id: 2,
-    icon: <ShieldCheck size={22} className="feat-icon-blue" />,
-    title: "Enterprise Grade",
-    description: "Runs fully client-side. Inherits native SharePoint document permissions, data security rules, and user-tenant authentication scopes."
+    icon: <BadgeCheck size={22} className="feat-icon-blue" />,
+    title: "IT Certified Badges",
+    description: "Earn official SharePoint and Power Automate certification badges recognized across the organization to boost your career path."
   },
   {
     id: 3,
-    icon: <Palette size={22} className="feat-icon-teal" />,
-    title: "Custom Brand Kit",
-    description: "Designed using CSS variable tokens. Easily configure colors, fonts, margins, and borders to align exactly with your organization's style guide."
+    icon: <Compass size={22} className="feat-icon-teal" />,
+    title: "Sandbox Playgrounds",
+    description: "Practice building sites, configuring permissions, and testing list automations inside isolated, safe sandbox environments."
   },
   {
     id: 4,
-    icon: <Monitor size={22} className="feat-icon-indigo" />,
-    title: "Responsive Grid",
-    description: "Adaptive layouts render beautifully across corporate laptops, iPads, and mobile screens. Perfect for on-the-go communications."
+    icon: <MessageSquare size={22} className="feat-icon-indigo" />,
+    title: "1-on-1 Office Hours",
+    description: "Need help? Schedule a private 15-minute session directly with our Lead Architects to troubleshoot site layout or security structures."
   },
   {
     id: 5,
-    icon: <Cpu size={22} className="feat-icon-pink" />,
-    title: "Interactive Widgets",
-    description: "Includes modules for real-time document search, announcement tracking, and system state monitors. Engaging tools to boost portal interactions."
+    icon: <ShieldAlert size={22} className="feat-icon-pink" />,
+    title: "Security Foundations",
+    description: "Learn best practices on data handling, external sharing scopes, and document permissions to keep corporate assets safe."
   },
   {
     id: 6,
     icon: <Activity size={22} className="feat-icon-orange" />,
-    title: "Fluid Animations",
-    description: "Built-in scroll-driven transition parameters. Elements dynamically scale, slide, and fade depending on their visibility viewport."
+    title: "Live Q&A Forums",
+    description: "Join the IT learning community. Ask questions, troubleshoot design bottlenecks, and share custom code templates with peers."
   }
 ];
 
@@ -48,8 +48,8 @@ export default function Features() {
         
         {/* Section Header */}
         <AnimatedContainer animationType="fade-up" className="section-header">
-          <span className="section-subtitle">CAPABILITIES</span>
-          <h2 className="section-title">Why Modern Teams Prefer This</h2>
+          <span className="section-subtitle">ACADEMY ADVANTAGE</span>
+          <h2 className="section-title">Why Enroll in Our Program?</h2>
           <div className="section-divider" />
         </AnimatedContainer>
 

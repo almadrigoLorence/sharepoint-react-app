@@ -1,37 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AnimatedContainer from './AnimatedContainer';
-import { ChevronLeft, ChevronRight, Share2, Eye, Calendar, User } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Share2, BookOpen, Clock, Award } from 'lucide-react';
 
-const SLIDES = [
+const COURSES = [
   {
     id: 1,
-    category: "COMMUNICATION",
-    title: "Unified Hub & Announcements",
-    description: "Broadcast enterprise news, share team events, and centralize important links with high visual impact. Elevate your corporate communication strategy today.",
+    category: "FOUNDATIONS",
+    title: "Modern Site Architecture & UX",
+    description: "Learn to design responsive intranet pages, structure navigation hierarchies, and build custom web parts. Establish a professional organizational layout.",
     colorClass: "carousel-grad-purple",
-    views: "2.4k",
-    date: "July 22, 2026",
-    author: "Global Comms"
+    duration: "4 hours",
+    lectures: "12 labs",
+    badge: "Beginner"
   },
   {
     id: 2,
-    category: "COLLABORATION",
-    title: "High-Velocity Document Vault",
-    description: "Access your cloud assets in milliseconds. Fully integrated search systems designed for massive enterprise libraries with modern metadata classification.",
+    category: "AUTOMATION",
+    title: "Intelligent Workflows & Lists",
+    description: "Connect lists to automated approval pipelines. Construct Power Automate flows that trigger notifications and sync data across libraries.",
     colorClass: "carousel-grad-blue",
-    views: "1.8k",
-    date: "July 20, 2026",
-    author: "KM Team"
+    duration: "6 hours",
+    lectures: "18 labs",
+    badge: "Intermediate"
   },
   {
     id: 3,
-    category: "ANALYTICS",
-    title: "Deep Workspace Intelligence",
-    description: "Gain real-time insights into user engagement, document usage patterns, and communication velocity within your SharePoint tenant.",
+    category: "SECURITY",
+    title: "Enterprise Governance & Security",
+    description: "Manage group inheritances, secure documents from unauthorized sharing, and configure tenant data protection rules. Keep corporate libraries compliant.",
     colorClass: "carousel-grad-teal",
-    views: "940",
-    date: "July 18, 2026",
-    author: "Analytics Lead"
+    duration: "3 hours",
+    lectures: "8 labs",
+    badge: "Advanced"
   }
 ];
 
@@ -41,17 +41,17 @@ export default function Carousel() {
   const timerRef = useRef(null);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
+    setCurrentSlide((prev) => (prev + 1) % COURSES.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
+    setCurrentSlide((prev) => (prev - 1 + COURSES.length) % COURSES.length);
   };
 
   // Autoplay logic
   useEffect(() => {
     if (!isHovered) {
-      timerRef.current = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+      timerRef.current = setInterval(nextSlide, 6000); // Change slide every 6 seconds
     }
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -62,8 +62,8 @@ export default function Carousel() {
     <section id="carousel" className="carousel-section">
       <div className="carousel-wrapper-container">
         <AnimatedContainer animationType="fade-up" className="section-header">
-          <span className="section-subtitle">PROJECT SPOTLIGHT</span>
-          <h2 className="section-title">Explore Featured Hubs</h2>
+          <span className="section-subtitle">FEATURED CURRICULUM</span>
+          <h2 className="section-title">Core Training Tracks</h2>
           <div className="section-divider" />
         </AnimatedContainer>
 
@@ -76,7 +76,7 @@ export default function Carousel() {
         >
           {/* Main Slides Area */}
           <div className="slides-container">
-            {SLIDES.map((slide, index) => {
+            {COURSES.map((slide, index) => {
               const isActive = index === currentSlide;
               return (
                 <div 
@@ -84,7 +84,7 @@ export default function Carousel() {
                   className={`slide-item ${slide.colorClass} ${isActive ? 'active' : ''}`}
                 >
                   <div className="slide-content-grid">
-                    {/* Left: Info */}
+                    {/* Left Info Panel */}
                     <div className="slide-info-panel">
                       <span className="slide-badge">{slide.category}</span>
                       <h3 className="slide-title">{slide.title}</h3>
@@ -93,22 +93,22 @@ export default function Carousel() {
                       {/* Meta information */}
                       <div className="slide-meta-row">
                         <div className="meta-item">
-                          <Calendar size={14} />
-                          <span>{slide.date}</span>
+                          <Clock size={14} />
+                          <span>{slide.duration}</span>
                         </div>
                         <div className="meta-item">
-                          <User size={14} />
-                          <span>{slide.author}</span>
+                          <BookOpen size={14} />
+                          <span>{slide.lectures}</span>
                         </div>
                         <div className="meta-item">
-                          <Eye size={14} />
-                          <span>{slide.views} views</span>
+                          <Award size={14} />
+                          <span>{slide.badge}</span>
                         </div>
                       </div>
 
                       <div className="slide-actions">
                         <button className="slide-primary-btn">
-                          <span>Enter Hub</span>
+                          <span>Start Course</span>
                           <ChevronRight size={16} />
                         </button>
                         <button className="slide-icon-btn" aria-label="Share">
@@ -117,7 +117,7 @@ export default function Carousel() {
                       </div>
                     </div>
 
-                    {/* Right: Mock UI Graphical Detail */}
+                    {/* Right Visual Panel */}
                     <div className="slide-visual-panel">
                       <div className="mock-interface-frame">
                         <div className="mock-card">
@@ -149,7 +149,7 @@ export default function Carousel() {
             onClick={prevSlide}
             aria-label="Previous slide"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={22} />
           </button>
           
           <button 
@@ -157,12 +157,12 @@ export default function Carousel() {
             onClick={nextSlide}
             aria-label="Next slide"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={22} />
           </button>
 
           {/* Bullet Indicators */}
           <div className="carousel-indicators">
-            {SLIDES.map((_, index) => (
+            {COURSES.map((_, index) => (
               <button
                 key={index}
                 className={`indicator-dot ${index === currentSlide ? 'active' : ''}`}

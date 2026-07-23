@@ -1,74 +1,75 @@
 import React from 'react';
 import AnimatedContainer from './AnimatedContainer';
-import { ArrowRight, Sparkles, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BookOpen, ChevronDown, CheckCircle2, Award, Users } from 'lucide-react';
 
 export default function Hero() {
   return (
     <section id="hero" className="hero-section">
-      {/* Decorative Blur Blobs */}
+      {/* Light Blur Background Blobs */}
       <div className="bg-blob blob-purple" />
       <div className="bg-blob blob-blue" />
 
       <div className="hero-container">
         <div className="hero-grid">
-          {/* Hero Left Content */}
+          {/* Hero Left Info */}
           <div className="hero-info">
             <AnimatedContainer animationType="fade-up" delay={100} className="badge-container">
               <div className="premium-badge">
-                <Sparkles size={12} className="badge-icon" />
-                <span>Next-Gen Digital Workspace</span>
+                <BookOpen size={13} className="badge-icon" />
+                <span>IT Training & Certifications</span>
               </div>
             </AnimatedContainer>
 
             <AnimatedContainer animationType="fade-up" delay={200}>
               <h1 className="hero-title">
-                Transform Your <span className="gradient-text">SharePoint</span> Experience
+                Master Your <span className="gradient-text">SharePoint</span> Workspace
               </h1>
             </AnimatedContainer>
 
             <AnimatedContainer animationType="fade-up" delay={300}>
               <p className="hero-description">
-                Experience high-performance visual design directly integrated into your SharePoint tenant. Clean, responsive, and animated for a modern intranet environment.
+                Welcome to the SharePoint Academy, hosted by the IT Department. Elevate your collaboration, design stunning intranets, and manage files securely with certified training paths.
               </p>
             </AnimatedContainer>
 
             <AnimatedContainer animationType="fade-up" delay={400} className="hero-actions-wrapper">
-              <a href="#features" className="primary-btn pulse-hover">
-                <span>Discover Features</span>
+              <a href="#carousel" className="primary-btn pulse-hover">
+                <span>View Courses</span>
                 <ArrowRight size={18} />
               </a>
-              <a href="#carousel" className="secondary-btn">
-                <span>View Gallery</span>
+              <a href="#staff" className="secondary-btn">
+                <span>Meet Instructors</span>
               </a>
             </AnimatedContainer>
 
             <AnimatedContainer animationType="fade-up" delay={500} className="hero-features-list">
               <div className="hero-feat-item">
                 <CheckCircle2 size={16} className="feat-check-icon" />
-                <span>Vite + React Core</span>
+                <span>Self-paced Labs</span>
               </div>
               <div className="hero-feat-item">
                 <CheckCircle2 size={16} className="feat-check-icon" />
-                <span>Fluid Animations</span>
+                <span>IT Endorsed</span>
               </div>
               <div className="hero-feat-item">
                 <CheckCircle2 size={16} className="feat-check-icon" />
-                <span>SharePoint Ready</span>
+                <span>Earn Badges</span>
               </div>
             </AnimatedContainer>
           </div>
 
-          {/* Hero Right Visuals */}
+          {/* Hero Right Visual Mockup (Redesigned for Academy stats) */}
           <AnimatedContainer animationType="zoom-in" delay={300} className="hero-visual-container">
             <div className="interactive-glass-card">
               <div className="card-header-bar">
                 <div className="dot dot-red" />
                 <div className="dot dot-yellow" />
                 <div className="dot dot-green" />
-                <span className="card-window-title">workspace_analytics.tsx</span>
+                <span className="card-window-title">academy_metrics.json</span>
               </div>
               <div className="card-body-content">
                 <div className="visual-chart-placeholder">
+                  {/* Completion Rate Chart */}
                   <div className="chart-bar bar-1 animate-grow-height-1" />
                   <div className="chart-bar bar-2 animate-grow-height-2" />
                   <div className="chart-bar bar-3 animate-grow-height-3" />
@@ -77,44 +78,48 @@ export default function Hero() {
                 </div>
                 <div className="visual-details">
                   <div className="detail-row">
-                    <span className="detail-label">Active Users</span>
-                    <span className="detail-val text-green">14,280 (+12%)</span>
+                    <span className="detail-label">Active Learners</span>
+                    <span className="detail-val text-indigo">1,240 enrolled</span>
                   </div>
                   <div className="detail-row">
-                    <span className="detail-label">Load Velocity</span>
-                    <span className="detail-val text-indigo">0.82s</span>
+                    <span className="detail-label">Certificates Issued</span>
+                    <span className="detail-val text-green">482 this month</span>
                   </div>
                   <div className="detail-row">
-                    <span className="detail-label">Integration State</span>
-                    <span className="detail-val status-pill-active">Online</span>
+                    <span className="detail-label">Course Rating</span>
+                    <span className="detail-val" style={{ color: 'var(--color-orange)' }}>4.9 / 5.0 ★</span>
                   </div>
                 </div>
               </div>
             </div>
+            
+            {/* Floating badge 1: Courses count */}
             <div className="visual-float-badge badge-1">
               <div className="float-badge-icon-wrapper purple">
-                <Sparkles size={16} />
+                <BookOpen size={16} />
               </div>
               <div>
-                <div className="float-badge-title">Smooth UX</div>
-                <div className="float-badge-desc">60 FPS Transitions</div>
+                <div className="float-badge-title">12 Core Labs</div>
+                <div className="float-badge-desc">SharePoint & Power Automate</div>
               </div>
             </div>
+
+            {/* Floating badge 2: Users support */}
             <div className="visual-float-badge badge-2">
               <div className="float-badge-icon-wrapper blue">
-                <CheckCircle2 size={16} />
+                <Users size={16} />
               </div>
               <div>
-                <div className="float-badge-title">SPFx Ready</div>
-                <div className="float-badge-desc">Modern Web Part</div>
+                <div className="float-badge-title">Dedicated Staff</div>
+                <div className="float-badge-desc">1-on-1 Office Hours</div>
               </div>
             </div>
           </AnimatedContainer>
         </div>
 
-        {/* Scroll Indicator Arrow */}
+        {/* Scroll Indicator */}
         <div className="scroll-indicator-arrow">
-          <a href="#carousel" aria-label="Scroll down">
+          <a href="#staff" aria-label="Scroll to Staff">
             <ChevronDown size={28} className="scroll-arrow-icon" />
           </a>
         </div>
